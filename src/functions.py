@@ -52,6 +52,11 @@ def faceVerify(model,savedFeatures,name):
                         t1 = datetime.now()
                         text = '''Trying Again'''
                         continue
+                else:
+                    t1 = datetime.now()
+                    text = '''Trying Again'''
+                    continue
+                    
         frame = cv2.putText(frame, text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
         cv2.imshow('Verify Face', frame)
         if cv2.waitKey(1) & 0XFF == ord('q'):
