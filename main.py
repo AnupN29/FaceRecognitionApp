@@ -1,6 +1,9 @@
 from keras_vggface.vggface import VGGFace
+import pickle5 as pk
+
 from matplotlib import pyplot as plt 
-from functions import *
+
+from utils import saveFeatures,faceVerify, newUser
 
 def main(model):
     print("\n \n \n Welcome to FIGURE IT OUT ENTERPRISE")
@@ -12,7 +15,7 @@ def main(model):
             continue
 
         if com == 1:
-            featureFileR = open('../SavedFeatures/Features.pkl', 'rb')
+            featureFileR = open('SavedFeatures/Features.pkl', 'rb')
             savedFeatures = pk.load(featureFileR)
             name = input("Enter name \n")
             flag =0
